@@ -42,3 +42,21 @@ yarn-debug.log*
 
 /public/uploads/*
 .env
+tmp/
+test/
+vendor/
+log/
+lib/
+db/seeds.rb
+bin/
+Gemfile
+Gemfile.lock
+Rakefile
+/app/*
+!/app/controllers
+!/app/models
+!/app/views
+config.ru
+/config/*
+!/config/locales
+!/config/routes.rb
