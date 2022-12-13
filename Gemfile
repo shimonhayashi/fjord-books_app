@@ -50,7 +50,10 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'devise'
 gem 'i18n_generators'
+gem 'jp_prefecture'
+gem 'jquery-rails'
 gem 'kaminari', '~> 1.2.1'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'net-imap'

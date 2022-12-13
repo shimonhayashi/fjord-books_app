@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script type="text/javascript" src="//jpostal-1006.appspot.com/jquery.jpostal.js"></script>
     <title><%= Book.model_name.human %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+    <%if flash.notice%>
+      <p class="notice"><%= notice %></p>
+    <%end%>
+    <%if flash.alert%>
+      <p class="alert"><%= alert %></p>
+    <%end%>
     <%= yield %>
   </body>
 </html>

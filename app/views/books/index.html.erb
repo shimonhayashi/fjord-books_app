@@ -1,5 +1,4 @@
-<p style="color: green"><%= notice %></p>
-
+<%if user_signed_in? %>
 <h1><%= Book.model_name.human %></h1>
 
 <div id="books">
@@ -14,3 +13,84 @@
 <%= link_to t('views.translate.new'), new_book_path %>
 
 <%= paginate @books %>
+
+<div id="user">
+<% @users.each do |user| %>
+    <p>
+      <%= link_to user.email, user%>
+    </p>
+<% end %>
+</div>
+
+<%= paginate @users %>
+
+
+ <%= link_to "Sign out", destroy_user_session_path, :method => :delete%>
+
+
+ <h2><%= t('views.translate.edit') %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+    <div class="field">
+    <%= f.label :current_password %> <br />
+    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %> <br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :postal_code %><br>
+    <%= f.text_field :postal_code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prefecture_code %><br>
+    <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :name, :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :street %><br>
+    <%= f.text_field :street %>
+  </div>
+  <div class="field">
+    <%= f.label :other_address %><br>
+    <%= f.text_field :other_address %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<%end%>
+
+<%= link_to "Login", new_user_session_path, class: 'post' %>
+<%= link_to "Sign up", new_user_registration_path, class: 'post' %>
