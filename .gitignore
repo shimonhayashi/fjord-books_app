@@ -52,12 +52,12 @@ bin/
 Gemfile
 Gemfile.lock
 Rakefile
-app/
-!app/controllers
-!app/models
-!app/views
+/app/*
+!/app/controllers
+!/app/models
+!/app/views
 config.ru
-config/
-!config/locales
-!config/routes.rb
+/config/*
+!/config/locales
+!/config/routes.rb
 
