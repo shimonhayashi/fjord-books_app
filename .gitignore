@@ -15,17 +15,17 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
-!/log/.keep
-!/tmp/.keep
+#!/log/.keep
+#!/tmp/.keep
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
-!/tmp/pids/
-!/tmp/pids/.keep
+# !/tmp/pids/
+# !/tmp/pids/.keep
 
 # Ignore uploaded files in development.
 /storage/*
-!/storage/.keep
+#!/storage/.keep
 
 /public/assets
 .byebug_history
@@ -42,3 +42,22 @@ yarn-debug.log*
 
 /public/uploads/*
 .env
+tmp/
+test/
+vendor/
+log/
+lib/
+db/seeds.rb
+bin/
+Gemfile
+Gemfile.lock
+Rakefile
+app/
+!app/controllers
+!app/models
+!app/views
+config.ru
+config/
+!config/locales
+!config/routes.rb
+
