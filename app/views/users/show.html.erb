@@ -1,4 +1,6 @@
 <p style="color: green"><%= notice %></p>
+<% if user_signed_in? %>
+
 <%= @user.id %><br>
 <%= @user.email %><br>
 <%= @user.postal_code %><br>
@@ -8,5 +10,6 @@
 <%= @user.other_address %><br>
 
 <div>
-  <%= link_to t('views.translate.back'), books_path %>
+  <%= link_to "back", :back %>
 </div>  
+<% end %>

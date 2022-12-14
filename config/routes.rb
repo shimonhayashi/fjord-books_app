@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :books
-  resources :users, only: [:show]
+  resources :users, only: %i[index show]
   get 'users/:id' => 'users#show'
 end

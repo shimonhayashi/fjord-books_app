@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
-  # before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  # private
-  # def configure_permitted_parameters
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
-  #   devise_parameter_sanitizer.permit(:account_update, keys: [:nickname])
-  # end
+  private
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[postal_code prefecture_code city street other_address])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[postal_code prefecture_code city street other_address])
+  end
 
   around_action :switch_locale
 
@@ -28,6 +29,9 @@ class ApplicationController < ActionController::Base
     '/books/'
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
   # def update_resource(resource, params)
   #   resource.update_without_current_password(params)
   # end
@@ -44,6 +48,4 @@ class ApplicationController < ActionController::Base
   #   clean_up_passwords
   #   result
   # end
-  
-
 end
