@@ -223,6 +223,13 @@ en:
       delete_confirm: OK?
       title_new: "%{name} new"
       title_edit: "%{name} edit"
+      top: "toppage"
+      mypage: "mypage"
+      user_list: "users_list"
+      sign_out: "sign_out"
+      login: "login"
+      sign_up: "sign_up"
+      
   controllers:
     translate:
       notice_create: "%{name} was made."

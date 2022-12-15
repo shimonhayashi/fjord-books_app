@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
 <% if user_signed_in? %>
 
-<h2>Users</h2>
+<h2><%= t('devise.registrations.view.user_list') %></h2>
 <div id="user">
 <% @users.each do |user| %>
     <p>
@@ -13,6 +13,6 @@
 <%= paginate @users %>
 
 <div>
-  <%= link_to "top", books_path %>
+  <%= link_to t('views.translate.top'), books_path %>
 </div>  
 <% end %>

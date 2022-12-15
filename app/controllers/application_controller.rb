@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
   private
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[postal_code prefecture_code city street other_address])
-    devise_parameter_sanitizer.permit(:account_update, keys: %i[postal_code prefecture_code city street other_address])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[postal_code prefecture_code city street other_address self_introduction])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[postal_code prefecture_code city street other_address self_introduction])
   end
 
   around_action :switch_locale

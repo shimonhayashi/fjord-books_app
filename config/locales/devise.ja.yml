@@ -28,6 +28,8 @@ ja:
     models:
       user: "ユーザ"
   devise:
+    failure:
+      already_authenticated: "既にログインしています"
     confirmations:
       new:
         resend_confirmation_instructions: "アカウント確認メール再送"
@@ -56,6 +58,9 @@ ja:
       new:
         forgot_your_password: "パスワードを忘れましたか?"
         send_me_reset_password_instructions: "パスワードの再設定方法を送信する"
+      user:
+        send_instructions: "パスワードリセットのメール送信完了"
+        updated: "パスワード変更完了"
     registrations:
       edit:
         are_you_sure: "本当に良いですか?"
@@ -63,15 +68,19 @@ ja:
         currently_waiting_confirmation_for_email: "%{email} の確認待ち"
         leave_blank_if_you_don_t_want_to_change_it: "空欄のままなら変更しません"
         title: "%{resource}編集"
+        mypage: "マイページ"
         unhappy: "気に入りません"
         update: "更新"
         we_need_your_current_password_to_confirm_your_changes: "変更を反映するには現在のパスワードを入力してください"
+      view:
+        user_list: "ユーザ一覧"
       new:
         sign_up: "アカウント登録"
       user:
         signed_in: "サインイン成功"
         signed_up: "サインアップ成功"
         signed_out: "サインアウト成功"
+        updated: "アカウント更新完了"
     sessions:
       new:
         sign_in: "ログイン"
