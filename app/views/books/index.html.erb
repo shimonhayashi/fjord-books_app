@@ -1,6 +1,4 @@
 <%if user_signed_in? %>
-<h1><%= Book.model_name.human %></h1>
-
 <div id="books">
   <% @books.each do |book| %>
     <%= render book %>
