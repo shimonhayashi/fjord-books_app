@@ -214,15 +214,6 @@ en:
       short: "%d %b %H:%M"
     pm: pm
   views:
-    translate:
-      show: show
-      edit: edit
-      destroy: delete
-      new: new
-      back: back
-      delete_confirm: OK?
-      title_new: "%{name} new"
-      title_edit: "%{name} edit"
   controllers:
     translate:
       notice_create: "%{name} was made."
