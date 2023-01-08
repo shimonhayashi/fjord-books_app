@@ -139,6 +139,7 @@ ja:
       too_long: は%{count}文字以内で入力してください
       too_short: は%{count}文字以上で入力してください
       wrong_length: は%{count}文字で入力してください
+      not_saved: "保存に失敗しました"
     template:
       body: 次の項目を確認してください
       header:
@@ -221,6 +222,13 @@ ja:
       delete_confirm: よろしいですか？
       title_new: "%{name}の新規作成"
       title_edit: "%{name}の編集"
+      top: "トップページ"
+      mypage: "マイページ"
+      user_list: "ユーザ一覧"
+      sign_out: "サインアウト"
+      login: "ログイン"
+      sign_up: "サインアップ"
+      forget_your_password: "パスワード再設定"
     pagination:
       first: '最初'
       last: '最後'

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BooksApp</title>
+<title><%= Book.model_name.human %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,20 @@
   </head>
 
   <body>
+<% if user_signed_in? %>
+<h1><a href='/books/'><%= Book.model_name.human %></a></h1>
+<%= link_to t('views.translate.user_list'), '/users' %>
+<%= link_to t('views.translate.mypage'), edit_user_registration_path, class: "user-edit-btn" %>
+<%= link_to t('views.translate.sign_out'), destroy_user_session_path, :method => :delete%>
+<%end%>
+<%= link_to t('views.translate.login'), new_user_session_path, class: 'post' %>
+<%= link_to t('views.translate.sign_up'), new_user_registration_path, class: 'post' %>
+    <%if flash.notice%>
+      <p class="notice"><%= notice %></p>
+    <%end%>
+    <%if flash.alert%>
+      <p class="alert"><%= alert %></p>
+    <%end%>
     <%= yield %>
   </body>
 </html>

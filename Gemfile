@@ -46,6 +46,8 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'dotenv'
+gem "dotenv-rails"
 gem 'devise'
 gem 'i18n_generators'
 gem 'kaminari'

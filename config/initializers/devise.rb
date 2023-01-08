@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '4c2b379b4b3219d58ccc0350b84ac50095509b975efc35179c968fe434d45abad7234723b09452451fce410904b51e5ae7b637f822ab0fe1507faa51f074ae99'
+  # config.secret_key = '3d0ec61e97c8aeb58ad47249541711e7cdf866ee3d2cf077800bc5fc23da67505c64257d53db527c1e9258bf8a8d039bfe6b0ce73159c69b9c9f381bf23e4943'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -24,16 +24,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  # メールを送信するアドレス
-  config.mailer_sender = ENV['SEND_MAILER_ADDRESS']
-  # パスワード再設定するためのキーカラム。
-  config.reset_password_keys = [:email]
-
-  # リセットパスワードキーを使ってパスワードをリセットできる時間間隔。
-  config.reset_password_within = 6.hours
-
-  #既定値はtrueで, リセットされた後に自動的にサインインする。
-  config.sign_in_after_reset_password = true
+  config.mailer_sender = 'fromasiatoasia@gmail.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -135,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '46c4ccd8545ee18288ebc462d6e77b6c727c2dd1a237f53fa01a343f932891d1daa34ed310df0d617526e0d0025e03cd1fa42ac621981d3bad008d79ff9e84f5'
+  # config.pepper = '2e3f10334db138cf6bdc6344be0129c9c0dc182b3d777a166af1372c117a12c6d64e11734d81019dca258a2ada81f3813dfa15d824404a02f3012c80d7b17a6a'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -228,7 +219,7 @@ Devise.setup do |config|
   # ==> Configuration for :recoverable
   #
   # Defines which key will be used when recovering the password for an account
-  # config.reset_password_keys = [:email]
+  config.reset_password_keys = [:email]
 
   # Time interval you can reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to
@@ -237,7 +228,7 @@ Devise.setup do |config|
 
   # When set to false, does not sign a user in automatically after their password is
   # reset. Defaults to true, so a user is signed in automatically after a reset.
-  # config.sign_in_after_reset_password = true
+  config.sign_in_after_reset_password = true
 
   # ==> Configuration for :encryptable
   # Allow you to use another hashing or encryption algorithm besides bcrypt (default).

@@ -1,7 +1,4 @@
-<p style="color: green"><%= notice %></p>
-
-<h1><%= Book.model_name.human %></h1>
-
+<%if user_signed_in? %>
 <div id="books">
   <% @books.each do |book| %>
     <%= render book %>
@@ -13,3 +10,4 @@
 
 <%= link_to t('views.translate.new'), new_book_path %>
 <%= paginate @books %>
+<%end%>
