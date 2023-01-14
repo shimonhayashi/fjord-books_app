@@ -52,16 +52,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    '/books/'
+    books_path
   end
 
   # The path used after sign up.
   def after_sign_up_path_for(_resource)
-    '/books/'
+    books_path
   end
 
   # The path used after sign up for inactive accounts.
   def after_update_path_for(_resource)
-    '/books/'
+    books_path
   end
 end

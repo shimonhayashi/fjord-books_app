@@ -1,5 +1,5 @@
 class WelcomeMailer < ApplicationMailer
-  default from: 'fromasiatoasia@gmail.com'
+  default from: ENV["SEND_MAILER_ADDRESS"]
 
   def welcome_email
     @user = params[:user]

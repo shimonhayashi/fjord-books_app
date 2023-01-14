@@ -218,6 +218,7 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.4)
+    squasher (0.7.0)
     strscan (3.0.3)
     thor (1.2.1)
     tilt (2.0.10)
@@ -274,6 +275,7 @@ DEPENDENCIES
   selenium-webdriver (< 4)
   spring
   sqlite3 (~> 1.4)
+  squasher (>= 0.6.0)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
