@@ -3,11 +3,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  validates :postal_code, presence: true
-  validates :prefecture_code, presence: true
-  validates :city, presence: true
-  validates :street, presence: true
-
   def after_confirmation
     UserMailer.welcome_email(self).deliver
   end
