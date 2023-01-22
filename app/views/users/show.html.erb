@@ -1,15 +1,16 @@
-<p style="color: green"><%= notice %></p>
 <% if user_signed_in? %>
-<%= @user.id %><br>
-<%= @user.email %><br>
-<%= @user.postal_code %><br>
-<%= @user.prefecture_code %><br>
-<%= @user.city %><br>
-<%= @user.street %><br>
-<%= @user.other_address %><br>
-<%= @user.self_introduction %><br>
-
-<div>
-  <%= link_to t('views.translate.back'), :back %>
-</div>  
+  <%= @user.id %><br>
+  <%= @user.email %><br>
+  <%= @user.postal_code %><br>
+  <%= @user.prefecture_code %><br>
+  <%= @user.city %><br>
+  <%= @user.street %><br>
+  <%= @user.other_address %><br>
+  <%= @user.self_introduction %><br>
+  <% if @user.user_icon.attached? %>
+    <%= image_tag @user.user_icon.variant(resize: "100x100") %>
+  <% end %>
+  <div>
+    <%= link_to t('views.translate.back'), :back %>
+  </div>  
 <% end %>

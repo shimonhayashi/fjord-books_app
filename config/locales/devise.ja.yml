@@ -33,6 +33,8 @@ ja:
         self_introduction: "自己紹介"
         sign_up: "サインアップ"
         log_in: "ログイン"
+        user_icon: "アイコン"
+        user_icon_uploaded: "現在登録されているアイコン"
     models:
       user: "ユーザ"
   devise:

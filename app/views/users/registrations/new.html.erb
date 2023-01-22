@@ -40,6 +40,7 @@
     <%= f.label :street %><br>
     <%= f.text_field :street %>
   </div>
+  
   <div class="field">
     <%= f.label :other_address %><br>
     <%= f.text_field :other_address %>
@@ -49,6 +50,12 @@
     <%= f.label :self_introduction %><br>
     <%= f.text_field :self_introduction %>
   </div>
+
+  <div class="field">
+    <%= f.label :user_icon %>
+    <%= f.file_field :user_icon %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
