@@ -35,6 +35,7 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'spring'
+  gem 'squasher', '>= 0.6.0'
   gem 'web-console', '>= 4.1.0'
 end
 
@@ -46,6 +47,11 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'dotenv'
+gem "dotenv-rails"
+gem 'devise'
+gem 'i18n_generators'
+gem 'kaminari'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 

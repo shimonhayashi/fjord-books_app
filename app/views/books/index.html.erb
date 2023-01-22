@@ -1,0 +1,13 @@
+<%if user_signed_in? %>
+<div id="books">
+  <% @books.each do |book| %>
+    <%= render book %>
+    <p>
+      <%= link_to t('views.translate.show'), book %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to t('views.translate.new'), new_book_path %>
+<%= paginate @books %>
+<%end%>
