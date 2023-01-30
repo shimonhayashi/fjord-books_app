@@ -1,12 +1,13 @@
-<p style="color: green"><%= notice %></p>
 <% if user_signed_in? %>
-
-<h2><%= t('devise.registrations.view.user_list') %></h2>
-<div id="user">
-<% @users.each do |user| %>
-    <p>
-      <%= link_to user.email, user%>
-    </p>
+  <h2><%= t('devise.registrations.view.user_list') %></h2>
+  <div id="user">
+  <% @users.each do |user| %>
+      <p>
+        <%= link_to user.email, user%>
+      </p>
+  <% if user.user_icon.attached? %>
+    <%= image_tag user.user_icon.variant(resize: "50x50") %>
+  <% end %>
 <% end %>
 </div>
 
