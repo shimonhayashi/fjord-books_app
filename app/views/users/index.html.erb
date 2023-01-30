@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <h2><%= t('devise.registrations.view.user_list') %></h2>
   <div id="user">
-  <% @users.with_attached_user_icon.each do |user| %>
+  <% @users.each do |user| %>
       <p>
         <%= link_to user.email, user%>
       </p>
