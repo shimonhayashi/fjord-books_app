@@ -3,7 +3,7 @@
   <div id="user">
   <% @users.each do |user| %>
       <p>
-        <%= link_to user.email, user%>
+        <%= link_to user.email, user %>
       </p>
   <% if user.user_icon.attached? %>
     <%= image_tag user.user_icon.variant(resize: "50x50") %>
