@@ -1,0 +1,11 @@
+<p>フォロー一覧</p>
+<% if @users.exists? %>
+  <% @users.each do |user| %>
+    <%= link_to user.email, user %><br>
+  <% end %>
+<% else %>
+  <p>フォローしているユーザーはいません</p>
+<% end %>
+<div>
+  <%= link_to t('views.translate.back'), :back %>
+</div>
