@@ -1,21 +1,14 @@
+# frozen_string_literal: true
+
 class FollowRelationshipsController < ApplicationController
   def create
-    current_user.follow(params[:user_id])
-    redirect_to request.referer
+    follower = User.find_by(params[:follower_id])
+    current_user.follow(params[:user_id]) if follower
+    redirect_to root_path
   end
 
   def destroy
     current_user.unfollow(params[:user_id])
-    redirect_to request.referer
-  end
-
-  def followings
-    user = User.find(params[:user_id])
-    @users = user.followings
-  end
-
-  def followers
-    user = User.find(params[:user_id])
-    @users = user.followers
+    redirect_to root_path
   end
 end

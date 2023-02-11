@@ -1,7 +1,7 @@
 <p>フォロワー一覧</p>
-<% if @users.exists? %>
-  <% @users.each do |user| %>
-    <%= link_to user.email, user %><br>
+<% if @followers.exists? %>
+  <% @followers.each do |follower| %>
+    <%= link_to follower.email, follower %><br>
   <% end %>
 <% else %>
   <p>フォローされているユーザーはいません</p>
