@@ -1,4 +1,4 @@
-class ChangeColumnToFollowRelationships < ActiveRecord::Migration[6.1]
+class AddIndexToFollowRelationships < ActiveRecord::Migration[6.1]
   def change
     add_index :follow_relationships, :follower_id
     add_index :follow_relationships, :followed_id

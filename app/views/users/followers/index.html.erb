@@ -1,4 +1,4 @@
-<p>フォロワー一覧</p>
+<h1>フォロワー一覧</h1>
 <% if @followers.exists? %>
   <% @followers.each do |follower| %>
     <%= link_to follower.email, follower %><br>
@@ -7,5 +7,5 @@
   <p>フォローされているユーザーはいません</p>
 <% end %>
 <div>
-  <%= link_to t('views.translate.back'), :back %>
+  <%= link_to t('views.common.back'), @user %>
 </div>
