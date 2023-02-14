@@ -44,7 +44,7 @@
 </p>
 
 <p>
-  <% unless @user == current_user %>
+  <% unless current_user == @user %>
     <% if current_user.following?(@user) %>
       <%= link_to "フォローを外す", user_follow_relationships_path(@user), method: :delete %>
     <% else %>

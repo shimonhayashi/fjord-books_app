@@ -1,8 +1,12 @@
 <h1>フォロー一覧</h1>
 <% if @followings.exists? %>
-  <% @followings.each do |followings| %>
-    <%= link_to followings.email, followings %><br>
-  <% end %>
+  <table>
+    <% @followings.each do |following| %>
+      <tr>
+        <td><%= link_to following.email, following %></td>
+      </tr>
+    <% end %>
+  </table>
 <% else %>
   <p>フォローしているユーザーはいません</p>
 <% end %>
