@@ -1,12 +1,13 @@
 <h1>フォロワー一覧</h1>
 <% if @followers.exists? %>
-  <table>
+  <dl>
+    <dt>フォロワーのメールアドレス</dt>
     <% @followers.each do |follower| %>
-      <tr>
-        <td><%= link_to follower.email, follower %></td>
-      </tr>
+      <dd>
+        <%= link_to follower.email, follower %>
+      </dd>
     <% end %>
-  </table>
+  </dl>
 <% else %>
   <p>フォローされているユーザーはいません</p>
 <% end %>

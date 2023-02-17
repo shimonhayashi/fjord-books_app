@@ -1,10 +1,11 @@
 <h1>フォロー一覧</h1>
 <% if @followings.exists? %>
-  <table>
+  <dl>
+    <dt>フォローしている人のメールアドレス</dt>
     <% @followings.each do |following| %>
-      <tr>
-        <td><%= link_to following.email, following %></td>
-      </tr>
+      <dd>
+        <%= link_to following.email, following %>
+      </dd>
     <% end %>
   </table>
 <% else %>
