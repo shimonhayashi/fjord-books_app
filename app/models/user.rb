@@ -14,10 +14,16 @@ class User < ApplicationRecord
 
   def follow(user_id)
     following_relationships.create(followed_id: user_id)
+  rescue => e
+    logger.error e
+    redirect_to users_path, notice: 'フォローに失敗しました'
   end
 
   def unfollow(user_id)
     following_relationships.find_by(followed_id: user_id)&.destroy
+  rescue => e
+    logger.error e
+    redirect_to users_path, notice: 'フォローの解除に失敗しました'
   end
 
   def following?(user)
