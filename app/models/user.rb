@@ -13,15 +13,11 @@ class User < ApplicationRecord
   has_many :followers, through: :follower_relationships, source: :follower
 
   def follow(user_id)
-    following_relationships.create(followed_id: user_id)
-  rescue ActiveRecord::RecordInvalid => e
-    logger.error e
+    following_relationships.new(followed_id: user_id)
   end
 
   def unfollow(user_id)
     following_relationships.find_by(followed_id: user_id)&.destroy
-  rescue ActiveRecord::RecordNotDestroyed => e
-    logger.error e
   end
 
   def following?(user)
