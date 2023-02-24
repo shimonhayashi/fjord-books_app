@@ -2,7 +2,7 @@
 
 class FollowRelationshipsController < ApplicationController
   def create
-    if current_user.follow(params[:user_id]).save
+    if current_user.follow(params[:user_id])
       set_user
       redirect_to user_path(@user), notice: 'フォローをしました'
     else
