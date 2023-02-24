@@ -13,11 +13,11 @@ class User < ApplicationRecord
   has_many :followers, through: :follower_relationships, source: :follower
 
   def follow(user)
-    following_relationships.new(followed_id: user).save
+    following_relationships.new(followed: user).save
   end
 
   def unfollow(user)
-    following_relationships.find_by(followed_id: user)&.destroy
+    following_relationships.find_by(followed: user)&.destroy
   end
 
   def following?(user)
