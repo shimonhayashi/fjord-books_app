@@ -12,12 +12,12 @@ class User < ApplicationRecord
   has_many :followings, through: :following_relationships, source: :followed
   has_many :followers, through: :follower_relationships, source: :follower
 
-  def follow(user_id)
-    following_relationships.new(followed_id: user_id)
+  def follow(user)
+    following_relationships.new(followed_id: user)
   end
 
-  def unfollow(user_id)
-    following_relationships.find_by(followed_id: user_id)&.destroy
+  def unfollow(user)
+    following_relationships.find_by(followed_id: user)&.destroy
   end
 
   def following?(user)
