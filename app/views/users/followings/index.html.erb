@@ -1,0 +1,16 @@
+<h1>フォロー一覧</h1>
+<% if @followings.exists? %>
+  <dl>
+    <dt>フォローしている人のメールアドレス</dt>
+    <% @followings.each do |following| %>
+      <dd>
+        <%= link_to following.email, following %>
+      </dd>
+    <% end %>
+  </table>
+<% else %>
+  <p>フォローしているユーザーはいません</p>
+<% end %>
+<div>
+  <%= link_to t('views.common.back'), @user %>
+</div>
