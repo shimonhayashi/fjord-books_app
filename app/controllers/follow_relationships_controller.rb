@@ -20,6 +20,6 @@ class FollowRelationshipsController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:user_id]) if User.exists?(params[:user_id])
+    @user = User.find_by(id: params[:user_id])
   end
 end
