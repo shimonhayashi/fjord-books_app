@@ -3,9 +3,10 @@
 <table>
   <thead>
     <tr>
-      <th>タイトル</th>
-      <th>ユーザ</th>
-      <th>内容</th>
+      <th><%= Report.human_attribute_name(:title) %></th>
+      <th><%= Report.human_attribute_name(:content) %></th>
+      <th><%= Report.human_attribute_name(:created_at) %></th>
+      <th><%= Report.human_attribute_name(:user) %></th>
     </tr>
   </thead>
 
@@ -13,8 +14,9 @@
     <% @reports.each do |report| %>
       <tr>
         <td><%= report.title %></td>
-        <td><%= link_to report.user.name, report.user %></td>
         <td><%= report.content %></td>
+        <td><%= l report.created_at, format: :short %></td>
+        <td><%= link_to report.user.name_or_email, report.user %></td>
         <td><%= link_to t('views.common.show'), report %></td>
         <td><%= link_to t('views.common.edit'), edit_report_path(report) if report.editable?(current_user) %></td>
         <td><%= link_to t('views.common.destroy'), report, method: :delete, data: { confirm: t('views.common.delete_confirm') } if report.editable?(current_user) %></td>
