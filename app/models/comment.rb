@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
-class Report < ApplicationRecord
+class Comment < ApplicationRecord
   belongs_to :user
-  has_many :comments, as: :commentable, dependent: :destroy
-
-  validates :title, presence: true
+  belongs_to :commentable, polymorphic: true
   validates :content, presence: true
 
   def editable?(target_user)
