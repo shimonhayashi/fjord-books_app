@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[edit update destroy]
 
@@ -7,6 +9,8 @@ class ReportsController < ApplicationController
 
   def show
     @report = Report.find(params[:id])
+    @comment = Comment.new
+    @comments = @report.comments
   end
 
   def new
@@ -36,6 +40,8 @@ class ReportsController < ApplicationController
     @report.destroy
     redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: Report.model_name.human)
   end
+
+  private
 
   def set_report
     @report = current_user.reports.find(params[:id])
