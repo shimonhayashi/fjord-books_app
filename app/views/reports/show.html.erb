@@ -11,11 +11,16 @@
 </p>
 
 <p>
-  <strong><%= Report.human_attribute_name(:user) %>:</strong>
-  <%= link_to @report.user.name, @report.user %>
+  <strong><%= Report.human_attribute_name(:created_at) %>:</strong>
+  <%= l @report.created_at, format: :short %>
 </p>
 
-<% if @report.editable?(current_user) %>
-  <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
-<% end %>
+<p>
+  <strong><%= Report.human_attribute_name(:user) %>:</strong>
+  <%= link_to @report.user.name_or_email, @report.user.name_or_email %>
+</p>
+
+<%= render 'comments/form', commentable: @report, comment: @comment %>
+<%= render 'comments/comments', commentable: @report, comments: @comments %>
+<%= link_to "#{t('views.common.edit')}|", edit_report_path(@report) if @report.editable?(current_user) %>
 <%= link_to t('views.common.back'), reports_path %>
