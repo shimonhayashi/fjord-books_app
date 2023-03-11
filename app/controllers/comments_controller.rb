@@ -4,9 +4,7 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:destroy]
 
   def destroy
-    if @comment.nil?
-      redirect_to root_path, alert: 'コメントの削除に失敗しました'
-    elsif @comment.destroy
+    if @comment&.destroy
       redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
     else
       redirect_to root_path, alert: 'コメントの削除に失敗しました'
