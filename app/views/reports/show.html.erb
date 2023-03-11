@@ -17,7 +17,7 @@
 
 <p>
   <strong><%= Report.human_attribute_name(:user) %>:</strong>
-  <%= link_to @report.user.name_or_email, @report.user.name_or_email %>
+  <%= link_to @report.user.name_or_email, @report.user %>
 </p>
 
 <%= render 'comments/form', commentable: @report, comment: @comment %>
