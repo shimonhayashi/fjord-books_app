@@ -1,6 +1,8 @@
 ---
 ja:
   activerecord:
+    models:
+      comment: コメント
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -224,6 +226,8 @@ ja:
       previous: '前'
       next: '次'
       truncate: '...'
+    comment:
+      not_exist: コメントが１件もありません
   layouts:
     application:
       menu: メニュー
