@@ -12,7 +12,7 @@ class ReportsTest < ApplicationSystemTestCase
     assert_text 'ログインしました。'
   end
 
-  test '#CRUD Reports' do
+  test '#CRUD Reports' do # rubocop:disable Metrics/BlockLength
     click_link '日報'
     click_on '新規作成'
     fill_in 'タイトル', with: '今日は大変'
